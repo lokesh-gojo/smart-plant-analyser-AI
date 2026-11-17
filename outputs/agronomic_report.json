@@ -8,29 +8,29 @@
   "clusters": [
     {
       "cluster_id": 1,
-      "visible_berries": 65,
-      "estimated_total_berries_3d": 94,
-      "compactness_solidity": 0.9,
+      "visible_berries": 63,
+      "estimated_total_berries_3d": 91,
+      "compactness_solidity": 0.895,
       "botrytis_rot_risk": "High",
-      "estimated_bunch_mass_g": 334.6,
+      "estimated_bunch_mass_g": 334.8,
       "predicted_brix_tss": 18.79,
       "predicted_ph": 4.2,
       "harvest_window": "Developing",
       "peduncle_cutting_xy": [
         340,
-        108
+        107
       ]
     }
   ],
   "disease_diagnosis": {
-    "condition": "Downy_Powdery_Mildew",
-    "confidence_percent": 20.37,
+    "condition": "Healthy_Vine",
+    "confidence_percent": 20.16,
     "spray_alert": false,
-    "action": "Apply copper-based protectant or sulfur sprays; increase canopy aeration."
+    "action": "Routine canopy monitoring and prophylactic management."
   },
   "block_yield": {
     "vines_per_hectare": 2667,
-    "average_cluster_mass_g": 334.6,
+    "average_cluster_mass_g": 334.8,
     "estimated_clusters_per_vine": 1.6,
     "yield_kg_per_vine": 0.54,
     "yield_tonnes_per_ha": 1.43,
