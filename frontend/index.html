@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartVine AI — Precision Viticulture Analytics</title>
+    <link rel="icon" href="https://img.icons8.com/color/48/grapes.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              vine: {
+                50: '#f0fdf4',
+                500: '#22c55e',
+                900: '#14532d',
+              },
+              grape: {
+                500: '#8b5cf6',
+                700: '#6d28d9',
+                900: '#4c1d95',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

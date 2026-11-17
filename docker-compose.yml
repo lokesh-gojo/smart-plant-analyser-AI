@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  smartvine-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: uvicorn app.api:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./models:/app/models
+      - ./outputs:/app/outputs
+    restart: unless-stopped
+
+  smartvine-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: streamlit run app/dashboard.py --server.port 7860 --server.address 0.0.0.0
+    ports:
+      - "7860:7860"
+    environment:
+      - STREAMLIT_SERVER_PORT=7860
+      - STREAMLIT_SERVER_HEADLESS=true
+    depends_on:
+      - smartvine-api
+    restart: unless-stopped

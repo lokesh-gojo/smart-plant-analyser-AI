@@ -1,0 +1,47 @@
+{
+  "source_image": "sample_data/benchmark_vineyard_sample.jpg",
+  "cultivar": "Sauvignon Blanc",
+  "calibration": {
+    "scale_px_per_mm": 2.48,
+    "marker_detected": true
+  },
+  "clusters": [
+    {
+      "cluster_id": 1,
+      "visible_berries": 65,
+      "estimated_total_berries_3d": 94,
+      "compactness_solidity": 0.9,
+      "botrytis_rot_risk": "High",
+      "estimated_bunch_mass_g": 334.6,
+      "predicted_brix_tss": 18.79,
+      "predicted_ph": 4.2,
+      "harvest_window": "Developing",
+      "peduncle_cutting_xy": [
+        340,
+        108
+      ]
+    }
+  ],
+  "disease_diagnosis": {
+    "condition": "Downy_Powdery_Mildew",
+    "confidence_percent": 20.37,
+    "spray_alert": false,
+    "action": "Apply copper-based protectant or sulfur sprays; increase canopy aeration."
+  },
+  "block_yield": {
+    "vines_per_hectare": 2667,
+    "average_cluster_mass_g": 334.6,
+    "estimated_clusters_per_vine": 1.6,
+    "yield_kg_per_vine": 0.54,
+    "yield_tonnes_per_ha": 1.43,
+    "confidence_interval_95_t_ha": [
+      1.26,
+      1.6
+    ],
+    "target_accuracy_range": "Nuske et al. MAPE < 12.0%"
+  },
+  "output_artifacts": {
+    "annotated_detection_image": "outputs\\annotated_detection.png",
+    "disease_gradcam_image": "outputs\\disease_gradcam.png"
+  }
+}
