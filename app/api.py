@@ -11,7 +11,8 @@ import cv2
 import numpy as np
 from fastapi import FastAPI, UploadFile, File, Form, Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, Response
+from fastapi.responses import JSONResponse, Response, FileResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from src.calibration import calibrate_image_and_scale
@@ -67,8 +68,24 @@ def startup_event():
                 pass
 
 
-@app.get("/")
-def root():
+# Mount static directory for complete web portal and paper assets
+os.makedirs("app/static", exist_ok=True)
+os.makedirs("paper", exist_ok=True)
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
+app.mount("/paper", StaticFiles(directory="paper"), name="paper")
+
+
+@app.get("/", response_class=HTMLResponse)
+def index_web():
+    """Serves the complete SmartVine AI precision viticulture web application."""
+    index_file = "app/static/index.html"
+    if os.path.exists(index_file):
+        return FileResponse(index_file)
+    return "<h1>SmartVine AI Precision Viticulture Platform</h1>"
+
+
+@app.get("/api/status")
+def system_status():
     return {
         "system": "SmartVine AI Precision Viticulture Platform",
         "version": "2.0.0",
