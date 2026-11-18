@@ -149,6 +149,7 @@ def segment_clusters_fallback(bgr_image: np.ndarray) -> List[np.ndarray]:
 
 
 @app.post("/analyze-vineyard-image")
+@app.post("/api/analyze")
 async def analyze_vineyard_image(
     file: UploadFile = File(...),
     pixels_per_mm: Optional[float] = Query(None, description="Explicit scale ratio; if omitted, automatically calibrated from marker card"),

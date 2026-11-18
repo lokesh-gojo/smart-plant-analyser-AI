@@ -23,10 +23,10 @@
     }
   ],
   "disease_diagnosis": {
-    "condition": "Healthy_Vine",
-    "confidence_percent": 20.16,
+    "condition": "Downy_Powdery_Mildew",
+    "confidence_percent": 20.22,
     "spray_alert": false,
-    "action": "Routine canopy monitoring and prophylactic management."
+    "action": "Apply copper-based protectant or sulfur sprays; increase canopy aeration."
   },
   "block_yield": {
     "vines_per_hectare": 2667,
